@@ -1,0 +1,264 @@
+\documentclass[10pt, letterpaper, oneside]{article}
+ 
+\usepackage{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[dvipsnames]{color}
+\usepackage{baskervald}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{helvetica}
+ 
+\pagestyle{plain} 
+ 
+\geometry{letterpaper,tmargin=.5in,bmargin=.5in,lmargin=.8in,rmargin=.8in,headheight=0in,headsep=0in,footskip=.3in}
+ 
+\setlength{\parindent}{0in}
+\setlength{\parskip}{0in}
+ 
+% Name and contact information
+\newcommand{\name}{Matias Kaplan}
+\newcommand{\phone}{(954) 439-2167}
+\newcommand{\email}{matiaskaplan92@gmail.com}
+ 
+% Colors
+\definecolor{light-grey}{gray}{0.3}
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Commands and Environments for resume
+ 
+% A horizontal rule for sections
+\newcommand{\HRule}[2]{\textcolor{#1}{\rule{\linewidth}{#2}}}
+ 
+% A section tile command
+\newcommand{\sectiontitle}[1]{\begin{minipage}{\textwidth}\HRule{black}{0.25mm}\vspace{-10pt}\begin{center}\large\MakeUppercase{#1}\end{center}\end{minipage}\vspace{-5pt}\\\HRule{light-grey}{0.15mm}\vspace{\baselineskip}}
+ 
+% An environment for a resume section
+\newenvironment{ressection}[1]{
+  \sectiontitle{#1}}
+  {\vspace{-\baselineskip}}
+ 
+% A ressection that has to be on one page, awards, education etc
+\newenvironment{tightressection}[1]{
+  \begin{minipage}{\textwidth}
+  \sectiontitle{#1}}
+  {\vspace{\baselineskip}\end{minipage}}
+ 
+% A column if there is a two columned section such as in awards
+\newenvironment{rescolumn}{
+  \begin{minipage}{0.5\textwidth}
+    \begin{itemize}[noitemsep,nolistsep]}
+  {\end{itemize}
+    \end{minipage}}
+ 
+% A resitem is a simple list element
+\newcommand{\resitem}[1]{
+    \vspace{2pt}
+    \item \begin{flushleft} #1 \end{flushleft}
+}
+ 
+% An entry for memberships
+% Arg1: Board
+% Arg2: Position
+% Arg3: Date
+\newcommand{\boardentry}[3]{
+  \begin{minipage}{\textwidth}
+  \vspace{-9pt}
+  \textbf{#1}\\
+  \textit{#2}, \textit{#3}\\
+  \vspace{0.5\baselineskip}
+  \end{minipage}
+}
+ 
+ 
+% An entry for education
+% Arg1: Institution
+% Arg2: Program
+% Arg3: Dates
+\newcommand{\resedentry}[3]{
+  \begin{minipage}{\textwidth}
+  \vspace{-10pt}
+  \textbf{#1}\\
+  \textit{#2}\hfill\textcolor{light-grey}{#3}\\
+  \vspace{0.5\baselineskip}
+  \end{minipage}
+}
+ 
+% Resentry defines a position
+% Arg1: Position title
+% Arg2: Company or Office---Company
+% Arg3: Location, PROV
+% Arg4: Date Range
+\newcommand{\resentryheader}[4]{
+    \vspace{-5pt}
+    \textbf{#1}\hspace{\stretch{1}}\textcolor{light-grey}{#3}\\
+    \textit{#2}\hspace{\stretch{1}}\textcolor{light-grey}{#4}\\
+}
+ 
+% This is a resume entry with a header and bullet items
+\newenvironment{resentry}[4]{
+  \begin{minipage}{\textwidth}
+    \resentryheader{#1}{#2}{#3}{#4}
+        \vspace{-\baselineskip}
+    \begin{itemize}[noitemsep,nolistsep]
+}{
+    \end{itemize}
+        \vspace{\baselineskip}
+        \end{minipage}
+}
+ 
+ 
+%%%%%%%%%%%%
+% Begin The Resume
+ 
+\begin{document}
+ 
+\begin{tabularx}{\linewidth}{X r}
+\multirow{3}{*}{\Huge\textbf{\name}} & \phone\\ & \email\\\\
+
+\end{tabularx}\\
+
+\begin{ressection}{summary}
+
+\begin{tabular}{  l l l l}
+{\bf{Technical Proficiency}} & Protein Purification & {\bf{Research Interests}} & Biological Engineering \\
+& Structural Biology & & Synthetic Biology\\  
+&  Molecular Biology & & Viruses\\
+
+
+\end{tabular}
+\end{ressection}
+ \medskip
+\medskip
+
+ % Education
+
+\begin{tightressection}{education}
+  \resedentry{University of Florida --- Gainesville, Fl}{Bachelor of Science in Biological Engineering (GPA: 3.65/4.0) Minor in Physics}{August 2010 --- December 2014}
+\end{tightressection}
+
+%Experience
+\vspace{-15pt}
+\begin{ressection}{experience}
+  
+
+  \begin{resentry}{HHMI EXROP Researcher - Doudna Lab - UC Berkeley}{Structural and Functional Insights into CRIPSR/Cas9, a DNA Targeting Enzyme}{May 2013 --- August 2013}{Berkeley, Ca}
+    \resitem{Developed protein labeling strategies for domain localization with the use of negative-stain electron microscopy}
+    \resitem{Identified catalytically important sites  through site directed mutagenesis}
+    \resitem{Purified over 15 protein constructs in \textit{E. Coli} expression system}
+  \end{resentry}
+
+  \begin{resentry}{Assistant Researcher - Macromolecular Structure Group - University of Florida}{Design of an Antibody Evading Adeno-Associated Virus Mutant}{August 2010 --- Present}{Gainesville, Fl}
+	\resitem{Mapped out antigenic site of AAV9 using X-ray crystallography and cryo-electron microscopcy techniques}
+    \resitem{Design of an Antibody Evading Adeno-Associated Virus Mutant}
+    \resitem{Mutated antibody binding epitopes to make an antibody evading virus}
+    \resitem{Trained and supervised an undergraduate researcher}
+  \end{resentry}
+
+  \begin{resentry}{HHMI Extramural Researcher - Institute of Virology - UN de C\'{o}rdoba}{Monitoring Arbovirus Circulation in South America}{May 2012 --- August 2012}{C\'{o}rdoba, Argentina}
+    \resitem{Communicated and conducted research in an exclusively Spanish speaking lab}
+    \resitem{Analyzed viral strains through the use of antibody neutralization assays }
+	\resitem{Prepared encephalitic virus stocks}
+  \end{resentry}
+
+\begin{resentry}{Engineering Intern Team Leader - Stryker Sustainability Solutions}{Reprocessing of Ultrasonic Scalpel Device}{August 2013 --- Present}{Gainesville, Fl}
+    \resitem{Supervised an interdisciplinary team of five engineers}
+    \resitem{Planned disassembly of a device for reprocessing}
+    \resitem{Standardized cleaning protocol to below FDA allowed bio-burden levels }
+  \end{resentry}
+
+\begin{resentry}{Engineering Design Student - Biomedical Design Class}{Lamprey-EX A Bio-inspired Atherectomy Device }{January 2013 --- May 2013}{Gainesville, Fl}
+    \resitem{Recognized clinical needs for coronary total occlusions}
+    \resitem{Designed and prototyped an atherectomy device }
+    \resitem{Outlined a provisional 510(k) submission}
+  \end{resentry}
+\end{ressection}
+ 
+% Publications
+\begin{tightressection}{publications}
+
+
+{\em \bf Programmable RNA recognition and cleavage by CRISPR/Cas9\\}
+ O'Connel MR, Oakes BL, Sternberg SH, East-Seletsky A, {\bf Kaplan M} \& Doudna JA --- {\it \textbf {Nature}} In Press \\
+
+{\em \bf Structures of Cas9 Endonucleases Reveal RNA-Mediated Conformational Activation\\}
+ Jinek M, Jiang F, Taylor DW, Sternberg SH, Kaya E, Ma E, Anders C, Hauer M, Zhou K, Lin S, {\bf Kaplan M}, Iavarone AT,  Charpentier E, Nogales E, \&  Doudna JA ---
+{\it \textbf{Science}} 1247997 14 March 2014
+
+\end{tightressection}
+
+% Activities
+\begin{ressection}{Activities}
+  \begin{resentry}{President and Founder}{Gator Student Research}{August 2011 --- Present}{Gainesville, Fl}
+    \resitem{Fostered a community amongst  undergraduate researchers through social events.}
+    \resitem{Increased retention of HHMI Science for Life Awardees.}
+    \resitem{Planned speaker series for underclassmen on pertinent research topics.}
+  \end{resentry}
+ 
+  \begin{resentry}{Committe Co-Chair}{Undergradute Research Symposium}{May 2013 --- August 2013}{Berkeley, Ca}
+    \resitem{Led 20-member committee to plan and execute a research symposium for over 200 attendees comprised of undergraduate students, faculty, and professionals}
+   \end{resentry}
+
+\begin{resentry}{Collaborator}{Creativity in the Arts and Sciences Event}{November 2013 --- January 2014}{Gainesville, Fl}
+    \resitem{Collaborated with a printmaking student to create a series of prints about the flexibility of printmaking and genomic engineering as mediums for creation}
+   \end{resentry}
+ \\
+\end{ressection}
+
+     
+
+% Awards
+\begin{tightressection}{awards}
+  \begin{rescolumn}
+      \resitem{Wenthworth Freshman Scholarship, 2011}
+      \resitem{HHMI Science for Life Intramural Research Award, 2011}
+    \end{rescolumn}
+  \begin{rescolumn}
+       \resitem{HHMI Science for Life Extramural Research Award, 2012}
+      \resitem{HHMI Exceptional Research Opportunities Program Scholar, 2013}
+    \end{rescolumn}
+\end{tightressection}
+
+\iffalse
+% Presentations
+\begin{tightressection}{Presentations}
+ \begin{rescolumn}
+      \resitem{Final Design Report, 2011}
+      \resitem{HHMI Science for Life Intramural Research Award, 2011}
+       \resitem{HHMI Science for Life Extramural Research Award, 2012}
+      \resitem{HHMI Exceptional Research Opportunities Program Scholar, 2013}
+  \end{rescolumn}
+\end{tightressection}
+\fi
+
+
+
+
+
+% Qualifications
+\begin{tightressection}{qualifications}
+   {\sl \bf Computer:} Matlab, HKL2000, PyMOL, COOT, Python,  Chimera, Illustrator, SolidWorks, \LaTeX  \\
+                {\sl \bf Laboratory:} Gel Electrophoresis, Isothermal Titration Calorimetry, Virus Purification, Crystallography, Viral Plaque Assay,
+Viral Stock Preparation, Blood Serum Preparation, Protein Purification, FPLC, Ion Exchange, Tissue Culture, Western Blot, SDS PAGE Gel, Dot Blot   \\
+	 {\sl \bf Languages:}  Fluent in English and Spanish \\
+{\sl \bf Interests:} History, Linguistics, Literature\\
+\end{tightressection}
+ 
+
+
+\iffalse
+%Boards and Committees
+\begin{tightressection}{Boards and Committees}
+  \boardentry{Carleton University Amateur Radio Club Executive}{Operations Executive}{September 2011 --- May 2013}
+  \boardentry{Canadian Association of Campus Emergency Response Teams (ACERT)}{Member of the Board of Directors}{February 2012 --- May 2013}
+  \boardentry{CUSERT Executive Selection Board}{Member (2011), Chair (2012)(2013)}{Annually in April, 2011 --- 2013}
+  \boardentry{Adrian D.C. Chan Award Committee}{Student Member}{October 2011 --- March 2012}
+  \boardentry{ACERT Mixer Committee}{Chair}{February 2011 --- November 2011}
+  \boardentry{CUSERT Executive}{External-Communications}{May 2008 --- May 2009}
+\end{tightressection}
+ \fi
+
+
+ 
+\end{document}
